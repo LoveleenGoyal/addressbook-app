@@ -31,11 +31,15 @@ public @Data class AddressBook {
     private List<String> email;
 
     public AddressBook(AddressBookDTO addressBookDTO) {
-        this.name = addressBookDTO.getName();
-        this.city = addressBookDTO.getCity();
-        this.state = addressBookDTO.getState();
-        this.zipCode = addressBookDTO.getZipCode();
-        this.phoneNumber = addressBookDTO.getPhoneNumber();
-        this.email = addressBookDTO.getEmail();
+        this.updateAddressBookData(addressBookDTO);
+    }
+
+    public void updateAddressBookData(AddressBookDTO addressBookDTO) {
+        this.name = addressBookDTO.name;
+        this.city = addressBookDTO.city;
+        this.state = addressBookDTO.state;
+        this.zipCode = addressBookDTO.zipCode;
+        this.phoneNumber = addressBookDTO.phoneNumber;
+        this.email = addressBookDTO.email;
     }
 }
