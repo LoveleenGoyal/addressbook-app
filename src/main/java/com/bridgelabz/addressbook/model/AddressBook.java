@@ -19,6 +19,7 @@ public @Data class AddressBook {
     private String city;
     private String state;
     private String zipCode;
+    private String address;
 
     @ElementCollection
     @CollectionTable(name="user_phone", joinColumns = @JoinColumn(name = "user_id"))
