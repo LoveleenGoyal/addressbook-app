@@ -3,19 +3,21 @@ package com.bridgelabz.addressbook.model;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import java.util.List;
 
 @Entity
 @Data
 @NoArgsConstructor
-public class Contact {
+public class AddressBook {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String name;
-    private String phoneNumber;
+    private String city;
+    private String state;
+    private String zipCode;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "address_id", referencedColumnName = "id")
-    private Address address;
+    private List<String> phoneNumber;
+
 }
