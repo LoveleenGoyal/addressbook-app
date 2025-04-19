@@ -40,6 +40,7 @@ public @Data class AddressBook {
         this.city = addressBookDTO.city;
         this.state = addressBookDTO.state;
         this.zipCode = addressBookDTO.zipCode;
+        this.address = addressBookDTO.address;
         this.phoneNumber = addressBookDTO.phoneNumber;
         this.email = addressBookDTO.email;
     }
