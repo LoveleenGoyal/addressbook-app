@@ -7,14 +7,11 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class AddressBookDTO {
-    private String name;
-    private String city;
-    private String state;
-    private String zipCode;
-
-    private List<String> phoneNumber;
-    private List<String> email;
+    public String name;
+    public String city;
+    public String state;
+    public String zipCode;
+    public List<String> phoneNumber;
+    public List<String> email;
 }
