@@ -1,9 +1,7 @@
 package com.bridgelabz.addressbook.dto;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Pattern;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.*;
 import lombok.Data;
 
 import java.util.List;
@@ -34,10 +32,12 @@ public class AddressBookDTO {
     public String address;
 
     @NotNull(message = "Phone number cannot be null")
+    @Valid
     @Size(min = 1, message = "At least one phone number must be specified")
-    public List<String> phoneNumber;
+    public List<@Pattern(regexp = "^[6-9][0-9]{9}$", message = "Invalid phone number") String> phoneNumber;
 
     @NotNull(message = "Email cannot be null")
+    @Valid
     @Size(min = 1, message = "At least one email must be specified")
-    public List<String> email;
+    public List<@Email(message = "Invalid email format") String> email;
 }
